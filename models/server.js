@@ -24,6 +24,8 @@ class Server {
     //lectura y parseo del body
     this.app.use( express.json() )
 
+    this.app.use( express.static('public') )
+
   }
   routes(){
     this.app.use(this.cafePath, require("../routes/cafes"))
