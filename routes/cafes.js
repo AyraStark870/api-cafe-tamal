@@ -8,7 +8,7 @@ const {
 
 const {cafesGet, cafesPost, cafesGetDetail, cafesUpdate, cafesDelete} = require('../controladores/cafes')
 
-router.get('/', validarWJT, cafesGet)
+router.get('/',cafesGet)
 router.get('/:id', cafesGetDetail)
 router.post('/', cafesPost)
 router.put('/:id', cafesUpdate)

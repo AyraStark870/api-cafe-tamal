@@ -2,19 +2,20 @@ const { response, request } = require("express")
 const Pastel = require('../models/pastel')
 
 
+
 const pastelesGet = async (req = request, res = response) => {
 
   const pasteles = await Pastel.find()
 
-
-  res.status(201).json({pasteles})
+  res.status(201).json({ pasteles })
 }
-const pastelesGetDetail = async (req = request, res = response) => {
+
+const pastelesGetDetail= async (req = request, res = response) => {
   const { id } = req.params
-  const pastel = await Pastel.findById(id)
+  const pastel= await Pastel.findById(id)
 
 
-  res.status(201).json({pastel})
+  res.status(201).json({ pastel })
 }
 const pastelesPost = async (req, res = response) => {
 
@@ -22,7 +23,7 @@ const pastelesPost = async (req, res = response) => {
   await pastel.save()
 
   res.json({
-   pastel
+    pastel
   })
 }
 
@@ -34,12 +35,12 @@ const pastelesUpdate = async (req, res, next) => {
   res.json(pastelActualizado)
 
 }
-const  pastelesDelete = async (req, res = response) => {
+const pastelesDelete = async (req, res = response) => {
   const { id } = req.params
 
   const pastel = await Pastel.findByIdAndDelete(id)
 
-  res.status(201).json({ pastel })
+  res.status(200).json({ pastel })
 }
 
 module.exports = {
