@@ -12,6 +12,6 @@ router.get('/', validarWJT, cafesGet)
 router.get('/:id', cafesGetDetail)
 router.post('/', cafesPost)
 router.put('/:id', cafesUpdate)
-router.delete('/:id', validarWJT, esAdminRole, cafesDelete)
+router.delete('/:id',  cafesDelete)
 
 module.exports = router

@@ -40,7 +40,7 @@ const cafesDelete = async (req, res = response) => {
 
   const cafe = await Cafe.findByIdAndDelete(id)
 
-  res.status(201).json({ cafe })
+  res.status(200).json({ cafe })
 }
 
 
