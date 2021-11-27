@@ -12,6 +12,12 @@ const CafesSchema = new Schema({
     maxlength: 20,
     minlength: 1,
   },
+  desc: {
+    type: String,
+    trim: true,
+    maxlength: 2000,
+    minlength: 5,
+  },
   img: {
     type: String,
   },

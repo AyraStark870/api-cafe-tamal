@@ -10,8 +10,8 @@ class Server {
     this.host = process.env.HOST ||'0.0.0.0'
     this.cafePath = "/api/cafes"
     this.pastelesPath = "/api/pasteles"
-    this.tamalesPath = "/api/tamales"
-    this.atolesPath = "/api/atoles"
+    this.newUser = "/api/usuario"
+    this.authPath = "/api/autenticar"
 
     //middlewares
     this.middlewares()
@@ -30,8 +30,9 @@ class Server {
   routes(){
     this.app.use(this.cafePath, require("../routes/cafes"))
     this.app.use(this.pastelesPath, require("../routes/pastel"))
-    this.app.use(this.tamalesPath, require("../routes/tamal"))
-    this.app.use(this.atolesPath, require("../routes/atol"))
+    this.app.use(this.newUser, require("../routes/user"))
+    this.app.use(this.authPath, require("../routes/auth"))
+
   }
 
   listen(){

@@ -1,6 +1,5 @@
 const { response, request } = require("express")
 const Cafe = require('../models/cafe')
-//const bcrypt = require('bcrypt');
 
 
 
