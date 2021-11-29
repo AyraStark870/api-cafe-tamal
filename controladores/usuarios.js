@@ -59,8 +59,9 @@ const usuariosPost = async (req, res = response) => {
     {
       expiresIn: '4h'
     });
+    let nombreenv = name
      res.json({
-      token
+      token, nombreenv
     })
   } catch (error) {
     res.json({ mensaje: 'Hubo un error' });

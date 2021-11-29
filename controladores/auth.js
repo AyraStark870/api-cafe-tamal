@@ -23,21 +23,15 @@ const login = async(req = request, res= response) => {
         msg: "password incorrecto"
       })
     }
-    //GENERAR jwt
-    const token = jwt.sign({
-      email: usuario.email,
-      nombre: usuario.nombre,
-      id: usuario._id,
-      rol: usuario.rol
-    },
-      'LLAVESECRETA',
-      {
-        expiresIn: '4h'
-      });
+    const token = await generarJWT(usuario)
+    req.usuario=usuario
+    console.log(req.usuario);
 
-    let rolenv = usuario.rol
+        let rolenv = usuario.rol
+    let nombreenv = usuario.name
+
     res.json({
-      token, rolenv
+      token, rolenv, nombreenv
     })
 
   } catch (error) {
